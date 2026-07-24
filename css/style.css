@@ -1,173 +1,1429 @@
-/* ==========================
-   VARIABLES
-========================== */
+/* =====================================================
+   AFRICONNECT SUMMIT 2026
+   STYLE.CSS COMPLET
+   HTML5 + CSS3 (Sans Bootstrap)
+===================================================== */
+
+
+/* ================= VARIABLES ================= */
 
 :root{
-    --couleur-principale: #00695c;
-    --couleur-secondaire: #009688;
-    --couleur-claire: #f5f5f5;
-    --couleur-foncee: #333333;
-    --couleur-blanche: #ffffff;
+
+    --primary:#0F172A;
+    --secondary:#1E293B;
+    --accent:#22C55E;
+    --hover:#16a34a;
+
+    --white:#F8FAFC;
+    --gray:#64748B;
+    --light:#E2E8F0;
+    --dark:#020617;
+
+    --shadow:0 10px 25px rgba(0,0,0,0.12);
+
+    --radius:15px;
+
+    --transition:0.3s ease;
+
 }
 
-/* ==========================
-   STYLE GÉNÉRAL
-========================== */
+
+
+/* ================= RESET ================= */
+
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
 }
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 
 body{
-    font-family: Arial, sans-serif;
-    background-color: var(--couleur-claire);
-    color: var(--couleur-foncee);
-    line-height: 1.6;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    line-height:1.6;
+
 }
 
-/* ==========================
-   TYPOGRAPHIE
-========================== */
+
+
+/* ================= ELEMENTS GENERAUX ================= */
+
+
+h1,h2,h3{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
 
 h1{
-    font-size: 36px;
-    margin-bottom: 20px;
+
+    font-size:3rem;
+
 }
+
 
 h2{
-    font-size: 28px;
-    margin-bottom: 15px;
+
+    font-size:2.2rem;
+
 }
 
-h3{
-    font-size: 22px;
-    margin-bottom: 10px;
-}
 
 p{
-    margin-bottom: 15px;
+
+    margin-bottom:15px;
+
 }
+
+
 
 a{
-    text-decoration: none;
-    color: var(--couleur-principale);
+
+    text-decoration:none;
+
+    color:var(--accent);
+
+    transition:var(--transition);
+
 }
 
-ul{
-    list-style: none;
+
+a:hover{
+
+    color:var(--hover);
+
 }
 
-/* ==========================
-   LAYOUT GÉNÉRAL
-========================== */
 
-header,
-section,
-footer{
-    width: 90%;
-    margin: auto;
-    padding: 20px;
+
+/* ================= HEADER NAVBAR ================= */
+
+
+header{
+
+    background:var(--primary);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
 }
 
-section{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
 
-/* ==========================
-   NAVBAR
-========================== */
 
 nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    min-height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
 }
+
+
+
+nav h2{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    margin:0;
+
+}
+
+
 
 nav ul{
-    display: flex;
-    gap: 20px;
+
+    display:flex;
+
+    list-style:none;
+
+    gap:25px;
+
 }
 
-/* ==========================
-   IMAGES
-========================== */
 
-img{
-    max-width: 100%;
-    height: auto;
+
+nav ul li a{
+
+    color:white;
+
+    font-weight:bold;
+
 }
 
-/* ==========================
-   BOUTONS
-========================== */
 
-button{
-    padding: 10px 20px;
-    background-color: var(--couleur-principale);
-    color: white;
-    border: none;
-    cursor: pointer;
+
+nav ul li a:hover{
+
+    color:var(--accent);
+
 }
 
-button:hover{
-    background-color: var(--couleur-secondaire);
+
+
+/* Boutons navbar */
+
+
+nav button{
+
+    border:none;
+
+    cursor:pointer;
+
 }
 
-/* ==========================
-   TABLEAUX
-========================== */
+
+
+
+
+/* ================= BOUTONS ================= */
+
+
+button,
+.btn{
+
+    background:var(--accent);
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    border:none;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+
+
+button:hover,
+.btn:hover{
+
+    background:var(--hover);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ================= SECTIONS ================= */
+
+
+section{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+
+}
+
+
+
+
+
+/* =====================================================
+   HERO PAGE ACCUEIL
+===================================================== */
+
+
+.hero{
+
+    min-height:85vh;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+
+    background:
+
+    linear-gradient(
+        rgba(15,23,42,0.75),
+        rgba(15,23,42,0.75)
+    ),
+
+    url("../images/background.jpg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+    border-radius:var(--radius);
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px;
+
+}
+
+
+
+.hero h1{
+
+    color:white;
+
+    font-size:3.5rem;
+
+}
+
+
+
+.hero p{
+
+    max-width:700px;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.hero button{
+
+    margin:10px;
+
+}
+
+
+
+/* ================= COMPTE A REBOURS ================= */
+
+
+#countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
+}
+
+
+
+#countdown span{
+
+    background:var(--accent);
+
+    padding:15px 20px;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+}
+
+/* =====================================================
+   PAGE ACCUEIL
+   CHIFFRES CLÉS
+===================================================== */
+
+
+#statistiques{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    align-items:stretch;
+
+}
+
+
+
+/* Le titre prend toute la largeur */
+
+#statistiques h2{
+
+    grid-column:1 / -1;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+#statistiques article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+
+
+#statistiques article:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+#statistiques h3{
+
+    color:var(--accent);
+
+    font-size:2.5rem;
+
+}
+
+
+
+
+
+/* =====================================================
+   POURQUOI PARTICIPER
+===================================================== */
+
+
+#pourquoi{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+#pourquoi h2{
+
+    grid-column:1/-1;
+
+}
+
+
+
+#pourquoi article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+
+
+#pourquoi article:hover{
+
+    transform:translateY(-8px);
+
+    border-bottom:4px solid var(--accent);
+
+}
+
+
+
+#pourquoi h3{
+
+    color:var(--accent);
+
+}
+
+
+
+
+
+/* =====================================================
+   INTERVENANTS PAGE ACCUEIL
+===================================================== */
+
+
+#intervenants{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+#intervenants h2{
+
+    grid-column:1/-1;
+
+}
+
+
+
+#intervenants article{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+
+
+#intervenants article:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+#intervenants img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* =====================================================
+   SPONSORS
+===================================================== */
+
+
+#sponsors{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+
+
+#sponsors h2{
+
+    width:100%;
+
+}
+
+
+
+#sponsors article{
+
+    width:250px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+
+
+#sponsors article:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+#sponsors h3{
+
+    color:var(--accent);
+
+}
+
+
+
+
+
+/* =====================================================
+   ANIMATION GENERALE DES CARTES
+===================================================== */
+
+
+#statistiques article,
+#pourquoi article,
+#intervenants article,
+#sponsors article{
+
+    animation:apparition 0.6s ease;
+
+}
+
+
+
+@keyframes apparition{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   PAGE INTERVENANTS
+===================================================== */
+
+
+/* Hero interne */
+
+section:first-of-type h1{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:60px 20px;
+
+    border-radius:var(--radius);
+
+}
+
+
+
+/* Boutons de filtre */
+
+section button{
+
+    margin:8px;
+
+}
+
+
+
+/* ================= BENTO GRID ================= */
+
+
+/*
+IMPORTANT :
+Dans intervenants.html toutes les cartes article
+doivent être à l'intérieur de :
+<div class="bento">
+*/
+
+.bento{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+
+
+.bento article{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    min-height:380px;
+
+    transition:var(--transition);
+
+}
+
+
+
+.bento article:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.bento img{
+
+    width:160px;
+
+    height:160px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.bento h3{
+
+    color:var(--accent);
+
+}
+
+
+
+.bento p{
+
+    margin-bottom:8px;
+
+}
+
+
+
+
+
+/* =====================================================
+   PAGE PROGRAMME
+===================================================== */
+
+
+
+/* Tableau */
+
 
 table{
-    width: 100%;
-    border-collapse: collapse;
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
 }
 
-table,
-th,
-td{
-    border: 1px solid #000;
+
+
+table th{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:18px;
+
 }
 
-th,
-td{
-    padding: 10px;
-    text-align: center;
+
+
+table td{
+
+    padding:15px;
+
+    text-align:center;
+
+    border-bottom:1px solid var(--light);
+
 }
 
-/* ==========================
-   FORMULAIRE
-========================== */
+
+
+table tr:hover{
+
+    background:#f1f5f9;
+
+}
+
+
+
+
+
+/* Boutons jours */
+
+
+section button{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+
+
+section button:hover{
+
+    background:var(--hover);
+
+}
+
+
+
+
+
+/* =====================================================
+   THEMATIQUES PROGRAMME
+===================================================== */
+
+
+.thematiques-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.thematiques-grid article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+
+.thematiques-grid article:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.thematiques-grid h3{
+
+    color:var(--accent);
+
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE INTERVENANTS + PROGRAMME
+===================================================== */
+
+
+@media(max-width:992px){
+
+
+    .bento{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    #statistiques{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .bento{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    #statistiques{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    #pourquoi{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+
+}
+
+/* =====================================================
+   PAGE CONTACT
+===================================================== */
+
+
+/* Formulaire */
+
+
+form{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+form label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+
 
 input,
 select,
 textarea{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid var(--light);
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
 }
+
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--accent);
+
+}
+
+
 
 textarea{
-    resize: vertical;
+
+    resize:vertical;
+
 }
 
-/* ==========================
+
+
+form button{
+
+    width:100%;
+
+}
+
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+
+details{
+
+    max-width:900px;
+
+    margin:15px auto;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+summary{
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}
+
+
+
+details p{
+
+    margin-top:15px;
+
+}
+
+
+
+
+
+/* =====================================================
+   GOOGLE MAPS
+===================================================== */
+
+
+iframe{
+
+    width:100%;
+
+    max-width:900px;
+
+    height:400px;
+
+    display:block;
+
+    margin:auto;
+
+    border:0;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+
+
+/* =====================================================
    FOOTER
-========================== */
+===================================================== */
+
 
 footer{
-    text-align: center;
-    background-color: var(--couleur-principale);
-    color: white;
-    padding: 10px;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:40px 10%;
+
+    text-align:center;
+
 }
+
+
+
 footer a{
 
-    color: white;
+    color:white;
 
-    text-decoration: none;
+}
 
-    margin: 10px;
+
+
+footer a:hover{
+
+    color:var(--accent);
+
+}
+
+
+
+footer ul{
+
+    list-style:none;
+
+}
+
+
+
+footer li{
+
+    display:inline-block;
+
+    margin:10px;
+
+}
+
+
+
+footer hr{
+
+    margin:25px 0;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+}
+
+
+
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+
+body.dark{
+
+    background:var(--dark);
+
+    color:white;
+
+}
+
+
+
+body.dark header,
+body.dark footer{
+
+    background:#000;
+
+}
+
+
+
+body.dark #statistiques article,
+body.dark #pourquoi article,
+body.dark #intervenants article,
+body.dark #sponsors article,
+body.dark .bento article,
+body.dark #themes article,
+body.dark form,
+body.dark details,
+body.dark table{
+
+    background:var(--secondary);
+
+    color:white;
+
+}
+
+
+
+body.dark input,
+body.dark textarea,
+body.dark select{
+
+    background:#020617;
+
+    color:white;
+
+    border-color:#334155;
+
+}
+
+
+
+body.dark table td{
+
+    border-color:#475569;
+
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE GENERAL
+===================================================== */
+
+
+@media(max-width:768px){
+
+
+    nav{
+
+        flex-direction:column;
+
+        padding:20px;
+
+    }
+
+
+
+    nav ul{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+
+    }
+
+
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    h2{
+
+        font-size:1.8rem;
+
+    }
+
+
+
+    .hero{
+
+        min-height:70vh;
+
+    }
+
+
+
+    .hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    form{
+
+        padding:20px;
+
+    }
+
+
+
+    footer li{
+
+        display:block;
+
+    }
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+    .hero{
+
+        padding:20px;
+
+    }
+
+
+
+    .hero button,
+    .btn{
+
+        width:100%;
+
+    }
+
+
+
+    .bento article{
+
+        min-height:auto;
+
+    }
+
+
+
+}
+
+/* --- SECTION THÉMATIQUES (PROGRAMME) --- */
+
+.thematiques-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crée la grille 2x2 */
+    gap: 20px;                             /* Espace entre les 4 blocs */
+    margin-top: 20px;
+}
+
+.thematiques-grid article {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
 }
